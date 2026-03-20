@@ -8,6 +8,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     * {margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
     body {background:#0b0b0b;color:#eaeaea;overflow-x:hidden;}
 
@@ -77,9 +80,9 @@
   <p>Game Designer • Game Developer</p>
 
   <nav>
-    <a href="#" data-key="portfolio">Portfolio</a>
-    <a href="#" data-key="about">Sobre</a>
-    <a href="#" data-key="contact">Contato</a>
+    <a href="#portfolio" data-key="portfolio">Portfolio</a>
+    <a href="#about" data-key="about">Sobre</a>
+    <a href="#contact" data-key="contact">Contato</a>
   </nav>
 
   <div class="lang-buttons">
@@ -88,7 +91,7 @@
   </div>
 </header>
 
-<section>
+<section id="portfolio">
   <h2 data-key="projects">Projetos</h2>
   <div class="projects">
 
@@ -173,12 +176,12 @@
   </div>
 </section>
 
-<section>
+<section id="about">
   <h2 data-key="about">Sobre mim</h2>
   <p class="about" data-key="about_text"></p>
 </section>
 
-<section class="contact">
+<section id="contact" class="contact">
   <h2 data-key="contact">Contato</h2>
   <div class="links">
     <a href="https://www.linkedin.com/in/giovanilourenco/" target="_blank">LinkedIn</a>
