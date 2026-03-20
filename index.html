@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giovani Lourenco</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+    body {background:#0b0b0b;color:#eaeaea;overflow-x:hidden;}
+
+    header {background:linear-gradient(180deg,#111,#0b0b0b);text-align:center;padding:80px 20px 40px;opacity:0;transform:translateY(-20px);animation:fadeDown 1s forwards;}
+    header img {width:110px;height:110px;border-radius:50%;object-fit:cover;border:2px solid #444;margin-bottom:20px;}
+    header h1 {font-size:34px;font-weight:600;}
+    header p {color:#888;margin-top:5px;}
+
+    nav {display:flex;justify-content:center;gap:30px;margin-top:20px;font-size:14px;}
+    nav a {color:#aaa;text-decoration:none;transition:0.2s;}
+    nav a:hover {color:#fff;}
+
+    .lang-buttons {margin-top:15px;}
+    .lang-buttons button {
+      margin: 5px;
+      padding: 6px 12px;
+      background:#111;
+      border:1px solid #333;
+      color:#aaa;
+      border-radius:6px;
+      cursor:pointer;
+    }
+    .lang-buttons button:hover {color:#fff;border-color:#555;}
+
+    section {max-width:1200px;margin:auto;padding:60px 20px;opacity:0;transform:translateY(40px);transition:1s;}
+    section.visible {opacity:1;transform:translateY(0);}
+
+    h2 {font-weight:500;margin-bottom:25px;}
+
+    .projects {display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;}
+
+    .card {background:#111;border-radius:18px;overflow:hidden;position:relative;cursor:pointer;transition:0.3s;}
+    .card:hover {transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,0.6);} 
+
+    .media {position:relative;width:100%;height:180px;overflow:hidden;}
+
+    .media img, .media video {
+      width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;transition:0.4s;
+    }
+
+    .media video {opacity:0;}
+
+    .card:hover video {opacity:1;}
+    .card:hover img {opacity:0;}
+
+    .card-content {position:absolute;bottom:0;width:100%;padding:20px;background:linear-gradient(transparent,rgba(0,0,0,0.9));}
+    .card-content h3 {margin-bottom:5px;}
+    .card-content p {font-size:13px;color:#bbb;}
+
+    .about {max-width:700px;line-height:1.6;color:#bbb;}
+
+    .contact {text-align:center;}
+
+    .links a {margin:10px;display:inline-block;padding:10px 18px;border-radius:8px;border:1px solid #333;color:#ccc;text-decoration:none;transition:0.2s;}
+    .links a:hover {background:#222;color:#fff;}
+
+    footer {text-align:center;padding:30px;color:#555;font-size:13px;}
+
+    @keyframes fadeDown { to {opacity:1;transform:translateY(0);} }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="perfil.jpg" alt="Foto de Giovani Lourenco">
+  <h1>Giovani Lourenco</h1>
+  <p>Game Designer • Game Developer</p>
+
+  <nav>
+    <a href="#" data-key="portfolio">Portfolio</a>
+    <a href="#" data-key="about">Sobre</a>
+    <a href="#" data-key="contact">Contato</a>
+  </nav>
+
+  <div class="lang-buttons">
+    <button onclick="setLanguage('pt')">PT</button>
+    <button onclick="setLanguage('en')">EN</button>
+  </div>
+</header>
+
+<section>
+  <h2 data-key="projects">Projetos</h2>
+  <div class="projects">
+
+    <div class="card">
+      <a href="https://franca-dev.itch.io/recolor" target="_blank">
+        <div class="media">
+          <img src="Banner_Recolor.PNG">
+          <video src="Recolor.mp4" muted loop></video>
+        </div>
+      </a>
+      <div class="card-content">
+        <h3>Recolor</h3>
+        <p>Puzzle Platform • Unity • Game Designer</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <a href="https://giovaniporti.itch.io/moss-runner" target="_blank">
+        <div class="media">
+          <img src="MossRunner_Banner2.png">
+          <video src="Runner_Video.mp4" muted loop></video>
+        </div>
+      </a>
+      <div class="card-content">
+        <h3>Moss Runner</h3>
+        <p>Endless Runner • Godot • Developer & Game Designer</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <a href="">
+        <div class="media">
+          <img src="Click_Dimension.PNG">
+          <video src="ClickDimension.mp4" muted loop></video>
+        </div>
+      </a>
+      <div class="card-content">
+        <h3>Click Dimension</h3>
+        <p>Clicker • Defold • Game Designer</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <a href="https://giovaniporti.itch.io/beat-memory" target="_blank">
+        <div class="media">
+          <img src="GD_Banner.jpg">
+          <video src="BeatMemory_Landscape.mp4" muted loop></video>
+        </div>
+      </a>
+      <div class="card-content">
+        <h3>Beat Memory</h3>
+        <p>Puzzle • Godot • Developer & Game Designer</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <a href="https://michael-silva.itch.io/aestrofs-grimoire" target="_blank">
+        <div class="media">
+          <img src="AestrofGrimoire_banner.png">
+          <video src="AestrofGrimoire.mp4" muted loop></video>
+        </div>
+      </a>
+      <div class="card-content">
+        <h3>Aestrof’s Grimoire</h3>
+        <p>Card Game • Game Designer</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <a href="https://giovaniporti.itch.io/manto-das-sombras" target="_blank">
+        <div class="media">
+          <img src="manto_banner.png">
+          <video src="Manto.mp4" muted loop></video>
+        </div>
+      </a>
+      <div class="card-content">
+        <h3>Manto das Sombras</h3>
+        <p>Stealth Puzzle • Game Designer</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2 data-key="about">Sobre mim</h2>
+  <p class="about" data-key="about_text"></p>
+</section>
+
+<section class="contact">
+  <h2 data-key="contact">Contato</h2>
+  <div class="links">
+    <a href="https://www.linkedin.com/in/giovanilourenco/" target="_blank">LinkedIn</a>
+    <a href="https://giovanilourenco.itch.io/" target="_blank">Itch.io</a>
+    <a href="mailto:giovanilou@gmail.com" target="_blank">Email</a>
+    <a href="https://github.com/giovanilourenco" target="_blank">GitHub</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Giovani Lourenco
+</footer>
+
+<script>
+const translations = {
+  pt: {
+    projects: "Projetos",
+    about: "Sobre mim",
+    contact: "Contato",
+    portfolio: "Portfolio",
+    about_text: `Game Designer com experiência na indústria e atuação em projetos independentes, especializado na criação de mecânicas, sistemas e narrativa.<br><br>
+    Apaixonado por desenvolver experiências impactantes, atuo tanto em 2D quanto em 3D, com domínio da Godot Engine e experiência prática em Unity e Defold.<br><br>
+    Possuo perfil multidisciplinar, com capacidade de prototipagem e desenvolvimento, contribuindo de forma ativa em todas as etapas do processo criativo.`
+  },
+  en: {
+    projects: "Projects",
+    about: "About Me",
+    contact: "Contact",
+    portfolio: "Portfolio",
+    about_text: `Game Designer with industry experience and a strong background in independent development, specializing in gameplay systems, mechanics, and narrative design.<br><br>
+    Driven by creating engaging and memorable experiences, I work across both 2D and 3D projects, primarily using Godot, with solid experience in Unity and Defold.<br><br>
+    With a multidisciplinary skill set, I am capable of prototyping and development, contributing throughout the entire creative process.`
+  }
+};
+
+function setLanguage(lang) {
+  document.querySelectorAll("[data-key]").forEach(el => {
+    const key = el.getAttribute("data-key");
+    el.innerHTML = translations[lang][key];
+  });
+}
+
+// inicia em PT
+setLanguage('pt');
+
+// scroll reveal
+const sections = document.querySelectorAll('section');
+const reveal = () => {
+  const trigger = window.innerHeight * 0.85;
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if(top < trigger) sec.classList.add('visible');
+  });
+};
+window.addEventListener('scroll', reveal);
+reveal();
+
+// vídeo hover
+ document.querySelectorAll('.card').forEach(card => {
+    const video = card.querySelector('video');
+    if(!video) return;
+    card.addEventListener('mouseenter', () => video.play());
+    card.addEventListener('mouseleave', () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+  });
+</script>
+
+</body>
+</html>
